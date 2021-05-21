@@ -109,9 +109,10 @@
                                     }
                                     else if($i == 4) {
                                         $addtext = 'date';
-                                        $addvalue = date("d/m/Y",strtotime($row[$i]));
+                                        $date = str_replace('/', '-', $row[$i]);
+                                        $addvalue = date('Y-m-d', strtotime($date));
                                     }
-                                    echo "<td  data-id='".$rownum."' ><span class='rowvalue showvalue_".$rownum."'>".$addvalue. "</span><input type='".$addtext."' style='display:none;' id='input_".$rownum."_".$i."' class='rowtextbox inputopen_".$rownum."' value='".$row[$i]."' /> </td>";
+                                    echo "<td  data-id='".$rownum."' ><span class='rowvalue showvalue_".$rownum."'>".$addvalue. "</span><input type='".$addtext."' style='display:none;' id='input_".$rownum."_".$i."' class='rowtextbox inputopen_".$rownum."' value='".$addvalue."' /> </td>";
                                 }
                                 ?> 
                                 <td>
